@@ -88,7 +88,7 @@ const Page: React.FC = () => {
       return {
         protocol,
         hostname: window.location.hostname,
-        port: window.location.port,
+        port: window.location.port || (protocol === 'https' ? '443' : '80'),
       }
     }
     return {
